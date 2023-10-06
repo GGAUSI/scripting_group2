@@ -1,6 +1,6 @@
 Rehabilitation Center Management System
 
-The Rehabilitation Center Management System is a  slution designed for rehabilitation facilities. Its core functionalities encompass:
+The Rehabilitation Center Management System is a  solution designed for rehabilitation facilities. Its core functionalities encompass:
 
 Patient Management:
 add and manage new patients, including personal details,  and contact information.
