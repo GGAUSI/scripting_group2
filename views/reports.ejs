@@ -6,6 +6,7 @@
     <title><%- title %></title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.0.2/chartjs-plugin-annotation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.js" integrity="sha512-n8DscwKN6+Yjr7rI6mL+m9nS4uCEgIrKRFcP0EOkIvzOLUyQgOjWK15hRfoCJQZe0s6XrARyXjpvGFo1w9N3xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
@@ -16,20 +17,27 @@
             <div class="main-content">
                 <h3>Reports</h3>
                     <div class="charts">
-                        <canvas id="myChart"></canvas>
+                        <canvas id="myChart" ></canvas>
+                        <div class="chart-actions">
+                            <button id="downloadChart">Download Chart</button>
+                            <button id="printChart">Print Chart</button>
+                        </div>
                         <canvas id="pieChart"></canvas>
+                        <div class="chart-actions">
+                            <button id="downloadChart">Download Chart</button>
+                            <button id="printChart">Print Chart</button>
+                        </div>
                         <canvas id="lineChart"></canvas>
+                       
                         <canvas id="multiLine"></canvas>
                     </div>
                     
              
                 <script>
-                    const months = '<%= months %>'
-                    const sales = '<%= sales %>'
-                    const names = '<%= names %>'
-                    const salary = '<%= salary %>'
-                    const expenses = '<%= expenses %>'
-                    console.log(expenses)
+                    const diseaseData = '<%= disease %>'
+                    const patients  = '<%= numPatients %>'
+                    const patients_sex = '<%= patients_sex %>'
+                    const labels = '<%= labels %>'
                 </script>
                 <script src="/graphs.js"></script>
             </div>

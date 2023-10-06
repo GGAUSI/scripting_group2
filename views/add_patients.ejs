@@ -1,0 +1,71 @@
+<!-- this view is used to add patients to the system -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <%- include("./partials/navigation") %>
+        <div class="content">
+            <%- include("./partials/header") %>
+            <div class="main-content">
+                <h3>Add patients</h3><br>
+                <div class="box-div">
+                    <form class="patient-form" action="/add" method="POST">
+                        <div class="patient-details">
+                            <div class="form-inner-div">
+                                <div class="short"><label for="">First Name</label><div><input type="text" name="fname" class="add-patients-input short-input" autofocus></div></div>
+                                <div class="short"><label for="">Surname</label><div><input type="text" name="sname" class="add-patients-input short-input"></div></div>
+                            </div>
+                            <div class="form-inner-div">
+                                <div class="label-div short"><label for="">Gender</label><div>
+                                    <select name="gender" id="gender">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div></div>
+                                <div class="label-div short"><label for="">Age</label><div><input type="number" name="age" class="add-patients-input short-input"></div></div>
+                            </div>
+                        </div>
+                        <div class="patient-details">
+                            <div class="label-div"><label for="">Email</label><div><input type="email" name="email" class="add-patients-input long-input"></div></div>
+                            <div class="label-div"><label for="">Diagnosis</label><div><input type="text" name="disease" class="add-patients-input long-input"></div></div>
+                            <div class="label-div"><label for="">Duration (in Days)</label><div><input type="number" name="duration" class="add-patients-input long-input"></div></div>
+                        </div>
+                        <div class="patient-details">
+                            <div class="form-inner-div">
+                                <div class="label-div short"><label for="">Room</label><div>
+                                    <select name="room" id="room_select">
+                                        <% free_rooms.forEach(item=> { %>
+                                            <option value="<%= item.room_id %>"><%= item.room_id %></option>
+                                        <% }); %>
+                                    </select></div></div>
+                                <div class="label-div short"><label for="">Bill (MWK)</label><div><input type="number" name="bill" class="add-patients-input short-input"></div></div>
+                            </div>
+                            <div class="form-inner-div">
+                                <div class="label-div short"><label for="">Bill Status</label><div>
+                                    <select name="bill_status" id="bill_status">
+                                        <option value="unpaid">Unpaid</option>
+                                        <option value="paid">Paid</option>
+                                    </select>
+                                </div></div>
+                                <div class="label-div short"><label for="">Check in Date</label><div><input type="date" name="check_in_date" class="add-patients-input short-input"></div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="submit" type="submit" class="">Submit</button>
+                            <button class="reset" type="reset">Reset</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

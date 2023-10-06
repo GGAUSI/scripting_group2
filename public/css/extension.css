@@ -1,0 +1,53 @@
+
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    width: 120px;
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .day {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    width: 40px;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5px;
+    color: #333;
+  }
+  
+  .arrow:hover {
+    color: #007bff;
+  }
+  

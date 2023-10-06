@@ -1,0 +1,52 @@
+<!-- this view is used to send emails -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+<body>
+    <div class="container">
+        <%- include("./partials/navigation") %>
+        <div class="content">
+            <%- include("./partials/header") %>
+            <div class="main-content">
+                <!-- Email Modal -->
+                <div class="email-modal" id="emailModal">
+                    <span class="email-modal-close" id="closeEmailModal">&times;</span>
+                    <h2>Contact Patient</h2>
+                    <form class="email-modal-form" id="emailForm" action="/send_mail" method="POST">
+                        <div class="form-item">
+                            <label for="recipientEmail">Recipient's Email:</label>
+                            <input type="text" id="recipientEmail" name="recipientEmail" value="<%- email_address %> " readonly>
+                        </div>
+                        <div class="form-item">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+            
+                       <div class="form-item">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                       </div>
+
+                       <div class="form-item">
+                             <button type="submit">Send Email</button>
+                       </div>
+            
+                        
+            
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

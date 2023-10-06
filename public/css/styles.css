@@ -18,7 +18,7 @@ body{
     background-color: rgb(240, 239, 239);
     
 }
-
+/* styles for the navigation */
 .navigation{
     color: white;
 }
@@ -57,6 +57,8 @@ body{
     border-radius: 50%;
 }
 
+/* styles for the header */
+
 .content-header{
     display: flex;
     justify-content: space-between;
@@ -69,7 +71,10 @@ body{
 
 .content{
     width: 80vw;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* overflow: auto; */
+
 }
 
 input{
@@ -92,6 +97,7 @@ input{
     margin-right: 2rem;
 }
 
+/* styles for the main section of the page */
 .main-content{
     background-color: rgb(240, 239, 239);
     height: 100%;
@@ -105,6 +111,9 @@ input{
     border-radius: 2%;
     width: 75vw;
     margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
@@ -112,6 +121,7 @@ input{
     display: flex;
     margin: auto;
 }
+
 
 a{
     text-decoration: none;
@@ -121,6 +131,8 @@ a{
 .active{
     background-color: rgb(40, 40, 94);
 }
+
+/* styles for the charts */
 
 #myChart{
     max-width: 42%;
@@ -177,6 +189,37 @@ a{
     column-gap: 5rem;
 
 }
+
+/* Style for the chart action buttons */
+
+.chart-actions button {
+    max-height: 4rem;
+    margin: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    background-color: #0074E4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; 
+    font-weight: bold; 
+    transition: background-color 0.3s ease; 
+
+
+    &:hover {
+        background-color: #0058A7; 
+}
+}
+
+#printChart {
+    background-color: #00A15F;
+}
+
+.chart-actions {
+    display: flex;
+    justify-content: center;
+}
+
 
 @media screen and (max-width: 770px) {
     .charts{
@@ -297,8 +340,222 @@ label #cancel{
       }
 }
 
+.card{
+    width: 17vw;
+    height: 20vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 0.3rem;
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+}
 @media screen and (max-width: 700px){
     .sidebar {
         width: 50vw;
     }
+}
+
+/* add patient form styles */
+
+.patient-details{
+    background-color: rgb(234, 216, 252);
+    padding: 2rem;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.patient-form{
+    margin: auto;
+    width: 45vw;
+    font-family: Helvetica, sans-serif;
+}
+
+.form-inner-div{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+
+}
+
+.label-div{
+    font-family: Helvetica, sans-serif;
+    margin-top: 1rem;
+}
+
+.short{
+    width: 47%;
+}
+
+.add-patients-input{
+    background-color: white;
+    outline: none;
+    border: 0.1rem solid rgb(216, 216, 216);
+    border-radius: 0.2rem;
+    height: 2rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+.add-patients-input:focus{
+    border: 0.1rem solid blueviolet;
+}
+
+.long-input{
+    width: 100%;
+}
+
+.short-input{
+    width: 100%;
+}
+select{
+    outline: none;
+    border: 2px solid blueviolet;
+    padding: 0.5rem;
+    margin: 1rem;
+    color: blueviolet;
+    border-radius: 5px;
+}
+
+
+
+.submit{
+    width: 47%;
+    height: 2.5rem;
+    margin: 0.7rem;
+    background-color: rgb(40, 40, 94);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 0.2rem;
+    transition: 0.5s;
+}
+
+.submit:hover{
+    background-color: rgb(153, 48, 252);
+    cursor: pointer;
+ 
+}
+.reset{
+    width: 47%;
+    height: 2.5rem;
+    float: right;
+    border: 0.1rem solid blueviolet;
+    background-color: none;
+    border-radius: 0.2rem;
+    color: blueviolet;
+    transition: 0.5s;
+}
+.reset:hover{
+  
+    background-color: blueviolet;
+    border-radius: 0.2rem;
+    color: rgb(255, 255, 255);
+}
+
+/* discharge patients styles */
+
+.tab{
+    padding: 2vh 2vw;
+    align-items: center;
+       
+}
+
+.tab-1{
+    background-color: blueviolet;
+}
+
+.tab-2{
+    background-color: blueviolet;
+}
+
+.discharge-btn{
+    background-color: blueviolet;
+    color: white;
+    padding: 0.4rem 1.5rem;
+    border: none;
+    border-radius: 0.1rem;
+    float: right;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.discharge-btn:hover{
+    background-color: rgb(40, 40, 94);;
+}
+
+td{
+    padding: 1rem 2vw;
+}
+
+.one{
+    background-color: blueviolet;
+    color: white;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.table-titles{
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* CSS styles for the sending email form  */
+
+.email-modal form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 90vh;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    background-color: #fff; 
+}
+
+.email-modal .form-item {
+    padding: 1rem 0;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.email-modal label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #333; 
+}
+
+.email-modal input[type="text"],
+.email-modal input[type="email"],
+.email-modal input[type="password"],
+.email-modal textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.email-modal textarea {
+    resize: vertical; 
+}
+
+.email-modal button[type="submit"] {
+    background-color: #082c7a; 
+    color: #fff; 
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease; 
+}
+
+.email-modal button[type="submit"]:hover {
+    background-color: #3a50b6; 
+    margin: 1rem;
 }

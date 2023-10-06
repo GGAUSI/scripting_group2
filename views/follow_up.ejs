@@ -1,0 +1,67 @@
+<!-- this view is used to contact past patients to follow up on their conditions. it redirects to a page for sending emails -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <%- include("./partials/navigation") %>
+        <div class="content">
+            <%- include("./partials/header") %>
+            <div class="main-content">
+                <h3>Follow up on past Patients</h3><br>
+                <div class="discharge-box-div">
+                    <div class="tab">
+                        <table>
+                            <div class="tab-1">
+                                <tr class="table-titles">
+                                    <td class="one">Patient ID</td>
+                                    <td class="one">Firstname</td>
+                                    <td class="one">Surname</td>
+                                    <td class="one">Diagnosis</td>
+                                    <td class="one">Check in Date</td>
+                                    <td class="one">Contact</td>
+                                </tr>
+                            </div>
+                            <div class="tab-2">
+                                <% patients_list.forEach(function(patient){ %>
+                                    <tr>
+                                        <td><%= patient.patient_id %></td>
+                                        <td><%= patient.fname %></td>
+                                        <td><%= patient.sname %></td>
+                                        <td><%= patient.disease %></td>
+                                        <td><%= patient.check_in_date %></td>
+                                        <td><button class="discharge-btn"><a href="/contact_patient?data=<%= patient.email %>">Contact</a></button></td>
+                                    </tr>
+                                <% }) %>
+                                
+                            </div>
+                        </table>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        function contact_patient(email_id) {
+            fetch('/contact_patient', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email_id }),
+            })
+        }
+
+
+
+
+    </script>
+</body>
+</html>

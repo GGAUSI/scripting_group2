@@ -2,37 +2,31 @@
     <header>
         <div class="nav-header">
             <i class="fa-brands fa-slack"></i>
-            <span>Workflow</span>
+            <span>REHABILITATION</span>
         </div>
     </header>
      <div class="nav-items <%= active === 'Dashboard' ? 'active': ''%>">
         <a href="/">
             <i class="fa-solid fa-house"></i>
-        <span>Dashboard</span>
+        <span>Home</span>
         </a>
     </div>
-    <div class="nav-items <%= active === 'Team'? 'active': ''%>">
-        <a href="team">
-            <i class="fa-solid fa-users"></i>
-            <span>Team</span>
+    <div class="nav-items <%= active === 'add'? 'active': ''%>">
+        <a href="/add">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Add patients</span>
         </a>
     </div>
-    <div class="nav-items <%= active === 'Projects'? 'active': ''%>">
-        <a href="projects">
-            <i class="fa-regular fa-folder"></i>
-            <span>Projects</span>
+    <div class="nav-items <%= active === 'Discharge'? 'active': ''%>">
+        <a href="/discharge">
+            <i class="fa-solid fa-user-minus"></i>
+            <span>Discharge</span>
         </a>
     </div>
-    <div class="nav-items <%= active === 'Calender'? 'active': ''%>">
-        <a href="calender">
-            <i class="fa-regular fa-calendar"></i>
-            <span>Calender</span>
-        </a>
-    </div>
-    <div class="nav-items <%= active === 'Documents'? 'active' : ''%>">
-        <a href="documents">
-            <i class="fa-regular fa-envelope"></i>
-            <span>Documents</span>
+    <div class="nav-items <%= active === 'Follow up'? 'active' : ''%>">
+        <a href="/follow_up">
+            <i class="fa-solid fa-address-card"></i>
+            <span>Follow up</span>
         </a>
     </div>
     <div class="nav-items <%= active === 'Reports'? 'active': ''%>">
